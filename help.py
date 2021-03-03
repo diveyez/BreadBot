@@ -3,10 +3,9 @@ import os
 from discord.ext import commands
 
 client = discord.Client()
-#client = commands.Bot(command_prefix = ".")
 client.remove_command("help")
 
-@client.group(invoke_without_command=True)
+@client.command()
 async def help(ctx):
     em = discord.Embed(title = 'Commands', description = 'How to use the available commands')
   
