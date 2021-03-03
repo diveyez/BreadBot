@@ -4,3 +4,4 @@ token
 config.py
 .history
 Procfile
+venv/*
