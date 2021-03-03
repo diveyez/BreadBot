@@ -7,6 +7,7 @@ import time
 import sys
 import finvizz
 import shortsqueeze
+import help
 
 
 # Connect to Discord
@@ -35,6 +36,8 @@ async def on_message(message):
                 await message.channel.send(":cry: Could not find ticker: $" + ticker.upper() + " :cry:")
             else:   
                 await message.channel.send(finvizz.prettify(finviz_data))
-
+        elif message.content.find(".help") != -1:
+            help.help()
+            
 print("Connecting")
 client.run(config.token)
