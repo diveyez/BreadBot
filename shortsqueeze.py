@@ -4,8 +4,7 @@ from ShortSqueezeData import ShortSqueezeData as SD
 
 
 def get_shortSqueeze_data(ticker):
-    print("get_ticker: " + ticker)
-    x = requests.get(f'http://shortsqueeze.com/?symbol={ticker.upper()}')
+    x = requests.get(f'https://shortsqueeze.com/?symbol={ticker.upper()}')
     response = x.content
     soup = BeautifulSoup(response, 'html.parser')
     table = soup.find_all('table')
@@ -19,17 +18,17 @@ def get_shortSqueeze_data(ticker):
             ticker = table[10].select('table table table')[
                 9].select('td')[2].get_text().strip()
             shInterestRatio = table[10].select('table table table')[
-                10].select('td')[7].get_text().strip()
-            shFloat = table[10].select('table table table')[
-                10].select('td')[9].get_text().strip().replace(" ", "")
+                10].select('td')[5].get_text().strip()
+            shFloat = table[10].select('table table table')[10].select('td')[
+                7].get_text().strip().replace(" ", "")
             shPercent = table[10].select('table table table')[
-                10].select('td')[11].get_text().strip()
-            shInterestCurrent = table[10].select('table table table')[
-                10].select('td')[13].get_text().strip()
-            shFloatData = table[10].select('table table table')[
-                10].select('td')[15].get_text().strip()
+                10].select('td')[9].get_text().strip()
+            shInterestCurrent = table[10].select('table table table')[10].select('td')[
+                11].get_text().strip()
+            shFloatData = table[10].select('table table table')[10].select('td')[
+                13].get_text().strip()
             shInterestPrior = table[10].select('table table table')[10].select('td')[
-                17].get_text().strip()
+                15].get_text().strip()
 
         except:
             print("Data Error")
@@ -42,21 +41,13 @@ def get_shortSqueeze_data(ticker):
 
 
 def prettify(data):
-    return "**:white_check_mark: Short Squeeze ** \n \
-        :ticket: Ticker: `{}`\n \
-        :classical_building: Company: `{}`\n \
-        :arrow_down: Short Interest Ratio: `{}`\n \
-        :hindu_temple:  Short Percent of Float: `{}`\n \
-        :scales: Short % Increase/Decrease: `{}`\n \
-        :dollar: Short Interest (Current): `{}` \n \
-        :dollar: Shares Float: `{}` \n \
-        :clock1: Short Interest (Prior): `{}` \
-        \n".format(data.ticker,
-                   data.company,
-                   data.shInterestRatio,
-                   data.shFloat,
-                   data.shPercent,
-                   data.shInterestCurrent,
-                   data.shFloatData,
-                   data.shInterestPrior
-                   )
+    return f"**:white_check_mark: Short Squeeze ** \n \
+        :ticket: Ticker: {data.ticker}\n \
+        :classical_building: Company: {data.company}\n \
+        :arrow_down: Short Interest Ratio: {data.shInterestRatio}\n \
+        :hindu_temple:  Short Percent of Float: {data.shFloat}\n \
+        :scales: Short % Increase/Decrease: {data.shPercent}\n \
+        :dollar: Short Interest (Current): {data.shInterestCurrent} \n \
+        :dollar: Shares Float: {data.shFloatData} \n \
+        :clock1: Short Interest (Prior): {data.shInterestPrior} \
+        \n"
