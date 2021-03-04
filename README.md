@@ -23,16 +23,14 @@ BreadBot is an all in one trading discord bot used in the Breadstackers and Brea
 
 # Usage 
 
-## Finviz API
+### Finviz API
 
 - Command `.{tickername}`
 
   Example:
   ![image](https://user-images.githubusercontent.com/11996230/109452043-7c672080-7a14-11eb-8320-f4c320e99adf.png)
 
-## ShortSqueeze Scrapper
-
-### Retrieves data from shortsqueeze.com
+### ShortSqueeze Scrapper
 
 - Command `.ss {tickername}`
 
