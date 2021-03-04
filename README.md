@@ -60,7 +60,7 @@ pip3 install -r requirements.txt
 python3 breadbot.py
 ```
 
-# Developer? Feel free to help!
+# Developer? Feel free to contribute!
 
 All kinds of contributions are welcome. 
 
