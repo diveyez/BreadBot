@@ -5,3 +5,4 @@ config.py
 .history
 Procfile
 venv/*
+.idea/*

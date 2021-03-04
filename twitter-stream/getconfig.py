@@ -8,4 +8,5 @@ def load_config(config_file):
 
     return data
 
+
 # load_config("config.json")
