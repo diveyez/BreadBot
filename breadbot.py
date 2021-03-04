@@ -18,7 +18,7 @@ async def on_message(message):
     if(message.author.bot):
         return
 
-    channels = ["breadbot"]
+    channels = config.channels
     
     if str(message.channel) in channels:
         if message.content.find(".ss") != -1:
