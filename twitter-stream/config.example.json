@@ -1,0 +1,12 @@
+{
+  "credentials": {
+    "consumer_key":"<consumer_key>",
+    "consumer_secret":"<consumer_secret>",
+    "access_token":"<access_token>",
+    "access_token_secret":"<access_token_secret>"
+  },
+  "discord_webhook": "<discord_webhook>",
+  "screen_names_to_follow": [
+    "TradeWithAlerts"
+  ]
+}
