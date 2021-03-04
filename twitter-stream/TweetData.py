@@ -18,3 +18,7 @@ class TweetData:
             'content': str(self.content),
             'quotedText': str(self.quotedText)
         }
+
+    # Make a pretty discord message
+    def prettify(self):
+        return "{}\nTweeted By: {}\nLink: {}\n".format(self.content, self.screenName, self.linkToTweet)

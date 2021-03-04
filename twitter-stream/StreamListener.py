@@ -3,6 +3,7 @@ import sys
 
 from TweetData import TweetData
 from getconfig import load_config
+from sendToDiscord import send_message_to_discord
 
 config = load_config('config.json')
 
@@ -13,7 +14,7 @@ class StreamListener(tweepy.StreamListener):
         print(status.id_str)
 
         # Construct link to tweet
-        tweet_link = ("https://twitter.com/" + status.user.screen_name + "/status/" + status.id_str)
+        tweet_link = f"https://twitter.com/{status.user.screen_name}/status/{status.id_str}"
 
         # if "retweeted_status" attribute exists, flag this tweet as a retweet.
         is_retweet = hasattr(status, "retweeted_status")
@@ -40,13 +41,10 @@ class StreamListener(tweepy.StreamListener):
             text.replace(c, " ")
             quoted_text.replace(c, " ")
 
-        # print("Timestamp:%s\nscreenName:%s\nreTweeted:%s\nquoted:%s\ncontent:%s\nquotedText:%s\n" % (status.created_at,status.user.screen_name,is_retweet,is_quote,text,quoted_text))
         tweet = TweetData(status.created_at, tweet_link, status.user.screen_name, is_retweet, is_quote, text,
                           quoted_text)
-        print(tweet.to_string())
 
-    # def on_status(self, status):
-    #     print(status.id_str)
+        send_message_to_discord(tweet)
 
     def on_error(self, status_code):
         print("Encountered streaming error (", status_code, ")")
@@ -56,4 +54,3 @@ class StreamListener(tweepy.StreamListener):
         else:
             # returning non-False reconnects the stream, with backoff.
             return True
-        sys.exit()
