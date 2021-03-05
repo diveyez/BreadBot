@@ -1,6 +1,6 @@
 class ShortSqueezeData:
     # Ticker, Company, Short Interest Ratio, Short percent of Float, Short % increase/Decrease, Short Interest (Current), Short Interest (Prior), Shares Float
-    def __init__(self, ticker, company, shInterestRatio, shFloat, shPercent, shInterestCurrent, shInterestPrior,shFloatData):
+    def __init__(self, ticker, company, shInterestRatio, shFloat, shPercent, shInterestCurrent, shInterestPrior, shFloatData):
         self.ticker = ticker
         self.company = company
         self.shInterestRatio = shInterestRatio
