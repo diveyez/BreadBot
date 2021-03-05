@@ -35,6 +35,7 @@ BreadBot is an all in one trading discord bot used in the Breadstackers and Brea
 - Command `.ss {tickername}`
 
   Example:
+  
   ![image](https://i.ibb.co/GFq9VXm/image.png)
 
 ## Twitter Stream
