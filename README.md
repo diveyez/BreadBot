@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/deebops/BreadBot" target="_blank"><img src="https://cdn.discordapp.com/avatars/708340506773553173/f8fe7241e415e3fdd4351382bd1a1c5c.png?size=256"></a></p>
+<p align="center"><b>BreadBot</b></p>
 
 <p align="center">
     <a href="https://www.python.org/downloads/release/python-380/"><img src="https://img.shields.io/badge/python-3.8-blue.svg?style=plastic" alt="Python version"></a>
@@ -16,7 +16,7 @@ BreadBot is an all in one trading discord bot used in the Breadstackers and Brea
 
 # Features
 - Finviz Data scrapping using the [finviz](https://github.com/mariostoev/finviz) python library.
-- ShortSqueeze Data retrieval.
+- [ShortSqueeze](https://shortsqueeze.com/) Data retrieval.
 - Live twitter feed using the [tweepy](https://github.com/tweepy/tweepy) libary.
 > 💡 Got a feature idea? Open an [issue](https://github.com/deebops/BreadBot/issues/new)
 
