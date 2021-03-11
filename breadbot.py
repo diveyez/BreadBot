@@ -30,12 +30,10 @@ async def on_message(message):
             else:   
                 await message.channel.send(shortsqueeze.prettify(shortdata))
         elif message.content.find(".help") != -1:
-            @client.command()
-            async def help(ctx):
-                em = discord.Embed(title = 'Commands', description = 'How to use the available commands')
-                em.add_field(name = 'Example', value = '.AAPL\n.ss AAPL')
-                em.add_field(name = 'Returns', value ='Stock info from Finviz.com\nShort info from Shortsqueeze.com')
-                await ctx.send(embed = em)
+            em = discord.Embed(title = 'Commands', description = 'How to use the available commands')
+            em.add_field(name = 'Example', value = '.AAPL\n.ss AAPL')
+            em.add_field(name = 'Returns', value ='Stock info from Finviz.com\nShort info from Shortsqueeze.com')
+            await message.channel.send(embed = em)
         elif message.content.find(".") != -1:
             ticker = message.content[1:]
             finviz_data = finvizz.get_finviz_data(str(ticker))
