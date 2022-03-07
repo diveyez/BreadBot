@@ -33,5 +33,4 @@ class Finviz_data:
 
 def convert_timesstamp_to_CST(ts):
     hour = int(ts.split("T")[1].split("+")[0].split(":")[0]) - 5
-    cst_timestamp = str(hour) + ":" + str(ts.split("T")[1].split("+")[0].split(":")[1:2][0])
-    return cst_timestamp
+    return f'{str(hour)}:' + str(ts.split("T")[1].split("+")[0].split(":")[1:2][0])
